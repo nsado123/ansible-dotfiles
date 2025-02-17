@@ -7,7 +7,7 @@
     "logFile": "clipse.log",
     "keyBindings": {
         "choose": "enter",
-        "clearSelected": "C",
+        "clearSelected": "c",
         "down": "down",
         "end": "end",
         "filter": "/",
@@ -15,11 +15,11 @@
         "more": "?",
         "nextPage": "right",
         "prevPage": "left",
-        "preview": "t",
+        "preview": "e",
         "quit": "q",
         "remove": "d",
         "selectDown": "shift+down",
-        "selectSingle": "s",
+        "selectSingle": "space",
         "selectUp": "shift+up",
         "togglePin": "p",
         "togglePinned": "tab",
@@ -27,9 +27,10 @@
         "yankFilter": "ctrl+s"
      },
     "imageDisplay": {
+        
         "type": "kitty",
-        "scaleX": 9,
-        "scaleY": 9,
-        "heightCut": 2
+        "scaleX": 18,
+        "scaleY": 20,
+        "heightCut": 5
      }
 }
