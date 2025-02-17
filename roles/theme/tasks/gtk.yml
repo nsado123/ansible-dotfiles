@@ -1,0 +1,28 @@
+---
+- name: "Nwg-Look | Install nwg-look"
+  ansible.builtin.pacman:
+    name: nwg-look
+    state: present
+  become: true
+
+- name: "Nwg-Look | Sync dots"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: nwg-look
+
+- name: "Nwg-Displays | Install nwg-displays"
+  ansible.builtin.pacman:
+    name: nwg-displays
+    state: present
+  become: true
+  when: ansible_hostname == 'nsado-desktop'
+
+- name: "Gtk | Install gtk-2.0"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: gtk-2.0
+
+- name: "Gtk | Install gtk-3.0"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src:  gtk-3.0

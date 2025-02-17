@@ -1,0 +1,11 @@
+---
+- name: "Btop | Install btop"
+  ansible.builtin.pacman:
+    name: btop
+    state: present
+  become: true
+
+- name: "Btop | Sync btop config"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: btop

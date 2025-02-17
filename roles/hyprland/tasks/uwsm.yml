@@ -1,0 +1,10 @@
+---
+- name: "UWSM | Install uwsm"
+  kewlfft.aur.aur:
+    name: uwsm
+    state: present
+
+- name: "UWSM | Sync dots"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: uwsm

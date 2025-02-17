@@ -1,0 +1,6 @@
+---
+- name: "Hyprlock | Install hyprlock"
+  ansible.builtin.pacman:
+    name:   hyprlock
+    state:  present
+  become: true

@@ -1,0 +1,4 @@
+- name: "Swayosd | Install swayosd"
+  kewlfft.aur.aur:
+    name:   swayosd 
+    state:  present

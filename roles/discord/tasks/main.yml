@@ -1,0 +1,6 @@
+---
+- name: "Discord | Install discord"
+  ansible.builtin.pacman:
+    name: discord
+    state: present
+  become: true

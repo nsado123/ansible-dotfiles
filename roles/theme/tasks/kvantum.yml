@@ -1,0 +1,18 @@
+---
+- name: "Kvantum | Install kvantum"
+  ansible.builtin.pacman:
+    name: kvantum
+    state: present
+  become: true
+
+- name: "Kvantum | Install qt5"
+  ansible.builtin.pacman:
+    name: kvantum-qt5
+    state: present
+  become: true
+
+- name: "Kvantum | Sync dots"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: Kvantum 
+

@@ -1,0 +1,11 @@
+---
+- name: "Hyprland | Install hyprland"
+  ansible.builtin.pacman:
+    name:   hyprland
+    state:  present
+  become: true
+
+- name: "Hyprland | Sync dots"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: hypr

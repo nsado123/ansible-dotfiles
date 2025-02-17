@@ -1,0 +1,20 @@
+default_roles:
+  - system
+  - git
+  - rust
+  - sddm
+  - hyprland
+  - theme
+  - btop
+  - discord
+  - dolphin
+  - fish
+  - flatpak
+  - kitty
+  - neovim
+  - obsidian
+  - spotify
+  - tmux
+  - vivaldi
+  - vscode
+  - yazi

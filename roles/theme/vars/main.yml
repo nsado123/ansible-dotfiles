@@ -1,0 +1,6 @@
+---
+task_files:
+      - kvantum.yml
+      - gtk.yml
+      - qt5.yml
+      - themes.yml

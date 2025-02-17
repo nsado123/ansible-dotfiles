@@ -1,0 +1,31 @@
+---
+- name: "Qt | Install qt5"
+  ansible.builtin.pacman:
+    name: 
+      - qt5ct  
+      - qt5-wayland
+      - qt5-quickcontrols
+      - qt5-quickcontrols2
+      - qt5-graphicaleffects
+    state: present
+  become: true
+
+- name: "Qt5 | Sync dots"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: qt5ct
+
+- name: "Qt | Install qt6"
+  ansible.builtin.pacman:
+    name:
+      - qt6-wayland
+      - qt6ct
+    state: present
+  become: true
+
+- name: "Qt6 | Sync dots"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: qt6ct
+
+

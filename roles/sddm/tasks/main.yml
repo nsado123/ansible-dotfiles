@@ -1,0 +1,27 @@
+- name: "Sddm | Install sddm"
+  ansible.builtin.pacman:
+    name: sddm
+    state: present
+  become: true
+
+- name: "Sddm | Activate sddm.service"
+  ansible.builtin.systemd_service:
+    name:     "sddm.service"
+    enabled:  "true"
+  become: true
+
+- name: "Sddm | Create sddm.conf.d dir"
+  file:
+    path: /etc/sddm.conf.d
+    state: directory
+    mode: '0755'
+  become: true
+
+- name: "Sddm | Configure autologin"
+  template:
+    src: autologin.conf.j2
+    dest: /etc/sddm.conf.d/autologin.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true

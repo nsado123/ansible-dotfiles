@@ -1,0 +1,4 @@
+---
+- name: "Theme | Run Task: theme"    
+  include_tasks: "{{ item }}"
+  loop: "{{ task_files }}"

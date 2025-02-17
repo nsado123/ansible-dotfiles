@@ -1,0 +1,6 @@
+---
+- name: Register Current User and Hostname
+  ansible.builtin.set_fact:
+    host_user: "{{ ansible_env.USER }}"
+    host_name: "{{ ansible_facts.hostname }}"
+  when: host_user is not defined or host_name is not defined

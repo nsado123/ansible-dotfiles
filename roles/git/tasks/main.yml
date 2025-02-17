@@ -1,0 +1,19 @@
+---
+- name: "Git | Install git"
+  ansible.builtin.pacman:
+    name:   git
+    state:  present
+  become: true
+
+- name: "Git | Set user.email"
+  community.general.git_config:
+    name: user.email
+    scope: global
+    value: "aydenbaghdoian@gmail.com"
+  no_log: false
+
+- name: "Git | Set user.name"
+  community.general.git_config:
+    name: user.name
+    scope: global
+    value: "nsado123"

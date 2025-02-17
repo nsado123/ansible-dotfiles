@@ -1,0 +1,38 @@
+---
+- name: "Icons | Install icons"
+  ansible.builtin.pacman:
+    name:
+      - tela-circle-icon-theme-dracula
+    state: present
+  become: true
+
+- name: "Icons | Install battery icons"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.local/share/"
+    src: icons
+  when: ansible_hostname == 'nsado-laptop'
+
+- name: "Cursor | Install bibata cursor"
+  kewlfft.aur.aur:
+    name: bibata-cursor-git
+    state: present
+
+- name: "Themes | Install gtk theme"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.local/share/"
+    src: themes
+
+- name: "Waytrogen | Install waytrogen"
+  kewlfft.aur.aur:
+    name: waytrogen
+    state: present
+
+- name: "Fonts | Install fonts"
+  kewlfft.aur.aur:
+    name: all-repository-fonts
+    state: present
+
+
+
+
+

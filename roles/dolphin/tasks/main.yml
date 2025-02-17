@@ -1,0 +1,25 @@
+---
+- name: "Dolphin | Install dolphin"
+  ansible.builtin.pacman:
+    name: dolphin
+    state: present
+  become: true
+
+- name: "Dolphin | Install dolphin dependencies"
+  ansible.builtin.pacman:
+    name: 
+      - qt5-imageformats
+      - ffmpegthumbs
+      - kde-cli-tools
+      - jq
+      - imagemagick
+      - kio-admin
+      - kio
+      - ark
+    state: present
+  become: true
+
+- name: "Dolphin | Sync dolphin config"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: configs/

@@ -1,0 +1,12 @@
+---
+- name: "Rofi | Install rofi"
+  ansible.builtin.pacman:
+    name: rofi-wayland
+    state: present
+  become: true
+
+- name: "Rofi | Install rofi"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: rofi
+

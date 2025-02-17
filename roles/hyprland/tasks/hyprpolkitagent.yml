@@ -1,0 +1,13 @@
+---
+- name: "Hyprpolkitagent | Install hyprpolkitagent"
+  ansible.builtin.pacman:
+    name:   hyprpolkitagent
+    state:  present
+  become: true
+
+- name: "Hyprpolkitagent | Activate hyprpolkitagent.service"
+  ansible.builtin.systemd_service:
+    name:     "hyprpolkitagent.service"
+    state:    "started"
+    enabled:  "true"
+    scope:    "user"

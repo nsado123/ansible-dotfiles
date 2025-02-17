@@ -1,0 +1,13 @@
+---
+- name: "Neovim | Install Neovim"
+  ansible.builtin.pacman:
+    name: neovim
+    state: present
+  become: true
+
+- name: "Neovim | Sync neovim config"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: nvim
+
+

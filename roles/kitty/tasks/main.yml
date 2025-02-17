@@ -1,0 +1,11 @@
+---
+- name: "Kitty | Install kitty"
+  ansible.builtin.pacman:
+    name: dolphin
+    state: present
+  become: true
+
+- name: "Kitty | Sync kitty dotfiles"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: kitty

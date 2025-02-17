@@ -1,0 +1,11 @@
+---
+- name: "Mako | Install mako"
+  ansible.builtin.pacman:
+    name: mako
+    state: present
+  become: true
+
+- name: "Mako | Sync dots"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: mako

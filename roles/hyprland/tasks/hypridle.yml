@@ -1,0 +1,6 @@
+---
+- name: "Hypridle | Install hypridle"
+  ansible.builtin.pacman:
+    name:   hypridle
+    state:  present
+  become: true

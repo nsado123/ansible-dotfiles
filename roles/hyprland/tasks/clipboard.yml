@@ -1,0 +1,16 @@
+---
+- name: "Clipboard | Install wl-clipboard"
+  ansible.builtin.pacman:
+    name: wl-clipboard
+    state: present
+  become: true
+
+- name: "Clipboard | Install clipse"
+  kewlfft.aur.aur:
+    name: clipse
+    state: present
+
+- name: "Clipse | Sync dots"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: clipse

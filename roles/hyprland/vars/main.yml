@@ -1,0 +1,11 @@
+---
+task_files:
+  - hyprland.yml
+  - xdg.yml
+  - hyprpaper.yml
+  - hyprlock.yml
+  - hypridle.yml
+  - hyprpolkitagent.yml
+  - screenshot.yml
+  - clipboard.yml
+  - mako.yml

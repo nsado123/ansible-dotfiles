@@ -1,0 +1,8 @@
+- name: "Vivaldi | Install vivaldi"
+  ansible.builtin.pacman:
+    name:
+      - vivaldi
+      - vivaldi-ffmpeg-codecs
+      - kdialog
+    state: present
+  become: true

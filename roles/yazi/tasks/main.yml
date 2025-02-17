@@ -1,0 +1,23 @@
+---
+- name: "Yazi | Install yazi"
+  ansible.builtin.pacman:
+    name: yazi
+    state: present
+  become: true
+
+- name: "Yazi | Install yazi dependencies"
+  ansible.builtin.pacman:
+    name:
+      - 7zip
+      - fzf
+      - fd
+      - poppler
+      - ripgrep
+    state: present
+  become: true
+
+#- name: "Yazi | Sync yazi config"
+#  ansible.posix.synchronize:
+#    dest: "{{ ansible_user_dir }}/.config/"
+#    src: yazi
+

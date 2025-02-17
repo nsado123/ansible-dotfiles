@@ -1,0 +1,11 @@
+---
+- name: "Screenshot | Install screenshots utility"
+  ansible.builtin.pacman:
+    name:   slurp
+    state:  present
+  become: true
+
+- name: "Screenshot | Install screenshots utility"
+  kewlfft.aur.aur:
+    name:   grimblast-git 
+    state:  present

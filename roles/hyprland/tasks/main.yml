@@ -1,0 +1,4 @@
+---
+- name: "Hyprland | Run Tasks: hyprland"
+  include_tasks: "{{ item }}"
+  loop: "{{ task_files }}"

@@ -1,0 +1,6 @@
+---
+- name: "Hyprpaper | Install hyprpaper"
+  ansible.builtin.pacman:
+    name:   hyprpaper
+    state:  present
+  become: true

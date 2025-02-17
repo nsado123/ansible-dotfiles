@@ -1,0 +1,8 @@
+---
+- name: "XDG Desktop Portal | Install xdg"
+  ansible.builtin.pacman:
+    name:
+      - xdg-desktop-portal-gtk
+      - xdg-desktop-portal-hyprland
+    state: present
+  become: true

@@ -1,0 +1,33 @@
+---
+- name: "Fish | Install fish"
+  ansible.builtin.pacman:
+    name: fish
+    state: present
+  become: true
+
+- name: "Fish | {{ ansible_hostname }} | Set default shell"
+  ansible.builtin.user:
+    name: "{{ host_user }}"
+    shell: /usr/bin/fish
+  become: true
+
+- name: "Fish | Install fish dependencies"
+  ansible.builtin.pacman:
+    name:
+      - eza
+      - zoxide
+      - starship
+      - fastfetch
+    state: present
+  become: true
+
+- name: "Fish | Sync fish config"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: fish
+
+- name: "Fastfetch | Sync fastfetch config"
+  ansible.posix.synchronize:
+    dest: "{{ ansible_user_dir }}/.config/"
+    src: fastfetch
+
