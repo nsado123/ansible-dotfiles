@@ -2,3 +2,10 @@
   kewlfft.aur.aur:
     name:   swayosd 
     state:  present
+
+- name: "Swayosd | Starting systemd service"
+  ansible.builtin.systemd_service:
+    name:     "swayosd-libinput-backend.service"
+    state:    "started"
+    enabled:  "true"
+  become: true
